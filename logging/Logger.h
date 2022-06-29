@@ -53,7 +53,7 @@ extern "C"
     do                                                                                                                                                              \
     {                                                                                                                                                               \
         if (__builtin_expect(((level) <= __log_level), 0))                                                                                                          \
-            fprintf(stderr, "%s[%s:%d](%s): " fmt " (%d - %s)\n", getLogLevel(level), __FILENAME__, __LINE__, __FUNCTION__, err, getErrString(err), ##__VA_ARGS__); \
+            fprintf(stderr, "%s[%s:%d](%s): " fmt " (%d - %s)\n", getLogLevel(level), __FILENAME__, __LINE__, __FUNCTION__, ##__VA_ARGS__, err, getErrString(err)); \
     } while (0)
 
     const char *getLogLevel(int level)
